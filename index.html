@@ -226,7 +226,7 @@ body{font-family:'Special Elite',monospace;background:#0e0a04;min-height:100vh}
     </div>
     <div class="hbtns">
       <button class="hbtn" onclick="go('landing')" style="font-size:8px">← Afsluiten</button>
-      <button class="hbtn" id="mis-regen" onclick="regenMissions()">↺ Missies</button>
+
     </div>
   </div>
   <div class="tabs">
@@ -410,7 +410,6 @@ function renderMis(){
   $i('tok-body').innerHTML=`<div style="font-size:9px;letter-spacing:4px;color:#4a3a18;margin-bottom:16px">// TOKENS OP JOUW BORD — ${f==='cia'?'USSR-BORD':'USA-BORD'}</div>${(S.myTokens||[]).map(p=>`<div class="tt-item"><div class="tt-emoji">${p.tok.emoji}</div><div class="tt-mid"><div class="tt-name">${p.tok.name}</div><div class="tt-city">📍 ${p.city.name}</div><div class="tt-desc">${p.tok.desc}</div></div><div class="tt-sect">S${p.city.sector}</div></div>`).join('')}`;
   switchTab(S.tab);
 }
-function regenMissions(){S.missions=genMissions(S.faction);renderMis()}
 function switchTab(t){
   S.tab=t;
   $i('tab-btn-missions').classList.toggle('active',t==='missions');

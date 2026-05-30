@@ -403,7 +403,7 @@ async function copyCode(){
 function renderMis(){
   const f=S.faction,stamp=f==='cia'?'CLASSIFIED':'СОВ. СЕКРЕТНО';
   $i('mis-badge').className='fbadge '+f;$i('mis-badge').textContent=f.toUpperCase();
-  $i('mis-regen').className='hbtn '+f;
+
   $i('mis-hdrtitle').textContent=f==='cia'?'CIA DOSSIER':'КГБ ДОСЬЕ';
   $i('mis-foot').textContent=f==='cia'?'CIA · LANGLEY, VA':'КГБ · МОСКВА';
   $i('mg').innerHTML=S.missions.map((m,i)=>`<div class="mc"><div class="mnum">MISSIE ${i+1}</div><div class="stamp ${f}">${stamp}</div><div class="oplabel">// OPERATIE</div><div class="opname">${m.code}</div><div class="cdiv"></div><div class="story">${m.story}</div><div class="cdiv"></div><div class="slabel">// Doellocatie</div><div class="brow"><span style="font-size:14px;margin-top:2px">🏛</span><div class="bname">${m.base.name}<span class="sbadge">SECTOR ${m.base.sector}</span></div></div><div class="slabel">// Benodigde intel · ${m.intel.length} kaarten</div><div class="icards">${m.intel.map(t=>`<div class="ic ${t}">${ILABEL[t]}</div>`).join('')}</div></div>`).join('');
